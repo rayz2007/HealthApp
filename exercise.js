@@ -1,4 +1,5 @@
 'use strict'
+
 let total = 0;
 let totalCalories = 0;
 
@@ -24,7 +25,6 @@ $('#add').click(function(event) {
     $('#totalCals').append(total);
 })
 
-$('')
 function fetchExercise(searchTerm) {
     let url = 'https://trackapi.nutritionix.com/v2/natural/exercise';
     return fetch(url, {
@@ -55,7 +55,7 @@ function renderExerciseTable(searchResults) {
     $('#tableBody').empty();
     let results = searchResults.exercises;
     totalCalories = 0;
-    results.forEach(function(element){
+    _.forEach(results, function(element) {
         let name = element.name;
         let duration = element.duration_min;
         let calories = element.nf_calories;
