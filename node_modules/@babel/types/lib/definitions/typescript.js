@@ -93,7 +93,7 @@ const namedTypeElementCommon = {
     typeAnnotation: (0, _utils.validateOptionalType)("TSTypeAnnotation")
   }
 });
-const tsKeywordTypes = ["TSAnyKeyword", "TSNumberKeyword", "TSObjectKeyword", "TSBooleanKeyword", "TSStringKeyword", "TSSymbolKeyword", "TSVoidKeyword", "TSUndefinedKeyword", "TSNullKeyword", "TSNeverKeyword"];
+const tsKeywordTypes = ["TSAnyKeyword", "TSUnknownKeyword", "TSNumberKeyword", "TSObjectKeyword", "TSBooleanKeyword", "TSStringKeyword", "TSSymbolKeyword", "TSVoidKeyword", "TSUndefinedKeyword", "TSNullKeyword", "TSNeverKeyword"];
 
 for (const type of tsKeywordTypes) {
   (0, _utils.default)(type, {
@@ -157,6 +157,20 @@ const fnOrCtr = {
   visitor: ["elementTypes"],
   fields: {
     elementTypes: (0, _utils.validateArrayOfType)("TSType")
+  }
+});
+(0, _utils.default)("TSOptionalType", {
+  aliases: ["TSType"],
+  visitor: ["typeAnnotation"],
+  fields: {
+    typeAnnotation: (0, _utils.validateType)("TSType")
+  }
+});
+(0, _utils.default)("TSRestType", {
+  aliases: ["TSType"],
+  visitor: ["typeAnnotation"],
+  fields: {
+    typeAnnotation: (0, _utils.validateType)("TSType")
   }
 });
 const unionOrIntersection = {
