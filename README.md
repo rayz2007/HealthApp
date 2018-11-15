@@ -7,5 +7,4 @@ The code is currently being worked on to utilize React, to see a basic working v
 NOTICE: This link below does not yet have React implemented. That is in progress
 Visit Calculators since most functionality is there at the moment.
 Visit Calculators(Exercise) to try out the natural language input. 
-https://info340d-au18.github.io/project-rayz2007/
-
+https://rayz2007.github.io/HealthAppPlainJS/.
