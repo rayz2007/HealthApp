@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { HashRouter, Route, Link} from 'react-router-dom';
-import { Container, Row, Col, Nav, NavItem, NavLink, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Container, Row, Col, Nav, NavItem, NavLink, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, Button, Form, FormGroup, Label, Input, FormText, Table } from 'reactstrap';
+import 'whatwg-fetch';
+import _ from 'lodash';
 
 class App extends Component {
   
@@ -173,9 +175,57 @@ class Exercise extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      totalCals : 0,
+      exercise : 'jumproped for 30 minutes',
+      exercises: []
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.changeExercise = this.changeExercise.bind(this);
   }
+
+  changeExercise(event) {
+    this.setState({exercise: event.target.value});
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.fetchData();
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+
+  fetchData(){
+    return fetch('https://trackapi.nutritionix.com/v2/natural/exercise', {
+      method: 'post',
+      headers: {
+        'x-app-id': 'bfbe68de',
+        'x-app-key': '956c67f76ec3a67a0db5f5ab7f998b33',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'query': this.state.exercise,
+        'gender': 'female',
+        'weight_kg': 72.5,
+        'height_cm': 167.64,
+        'age': 30
+      })
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(data => {
+      this.setState({exercises: data.exercises});
+    })
+    .catch(function(error) {
+      console.error(error);
+    }); 
+  }
+
+
+
   render() {
     return (
       <div>
@@ -190,8 +240,57 @@ class Exercise extends Component {
             <NavLink tag={Link} to="/exercise" active>Exercise</NavLink>
           </NavItem>
         </Nav>
-        
+
+        <Form>
+          <Row>
+            <Col md={6}>
+              <FormGroup>
+                <Label for="exerciseText">Tell me how you exercised</Label>
+                <Input type="textarea" name="text" id="exerciseText" onChange={this.changeExercise} placeholder='walked for 30 minutes'/>
+              </FormGroup>
+              <Button onClick={this.handleClick}>Submit</Button>
+            </Col>
+            <Col md={6}>
+              <Label for="total">
+                Total Calories Burned: 
+                <output id="total">
+                    <span id="totalCals">{this.state.totalCals}</span> 
+                </output>       
+              </Label>
+            </Col>
+          </Row>
+        </Form>
+        <Table>
+          <thead>
+            <tr>
+              <th>Exercise Name</th>
+              <th>Duration</th>
+              <th>Calories Burned</th>
+            </tr>
+          </thead>
+          <Tablerow exercises={this.state.exercises}/>
+        </Table>
       </div>
+    );
+  }
+}
+
+class Tablerow extends Component {
+  render() {
+    let totalExercises = this.props.exercises;
+    let exList = totalExercises.map(element => {
+      return(
+        <tr key={element}>
+          <td>{element.name}</td>
+          <td>{element.duration_min}</td>
+          <td>{element.nf_calories}</td>
+        </tr>
+      );
+    });
+    return(
+      <tbody>
+        {exList}
+      </tbody>
     );
   }
 }
