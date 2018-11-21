@@ -246,7 +246,7 @@ class Exercise extends Component {
             <Col md={6}>
               <FormGroup>
                 <Label for="exerciseText">Tell me how you exercised</Label>
-                <Input type="textarea" name="text" id="exerciseText" onChange={this.changeExercise} placeholder='walked for 30 minutes'/>
+                <InputArea update={this.changeExercise}/>
               </FormGroup>
               <Button onClick={this.handleClick}>Submit</Button>
             </Col>
@@ -271,6 +271,14 @@ class Exercise extends Component {
           <Tablerow exercises={this.state.exercises}/>
         </Table>
       </div>
+    );
+  }
+}
+
+class InputArea extends Component {
+  render() {
+    return(
+      <Input type="textarea" name="text" id="exerciseText" onChange={this.props.update} placeholder='walked for 30 minutes'/>
     );
   }
 }
