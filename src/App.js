@@ -175,7 +175,6 @@ class Exercise extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalCals : 0,
       exercise : 'jumproped for 30 minutes',
       exercises: []
     };
@@ -225,7 +224,6 @@ class Exercise extends Component {
   }
 
 
-
   render() {
     return (
       <div>
@@ -249,14 +247,6 @@ class Exercise extends Component {
                 <InputArea update={this.changeExercise}/>
               </FormGroup>
               <Button onClick={this.handleClick}>Submit</Button>
-            </Col>
-            <Col md={6}>
-              <Label for="total">
-                Total Calories Burned: 
-                <output id="total">
-                    <span id="totalCals">{this.state.totalCals}</span> 
-                </output>       
-              </Label>
             </Col>
           </Row>
         </Form>
