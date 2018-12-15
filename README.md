@@ -1,6 +1,6 @@
 ## Health/Fitness App
 
-This web applicstion utilized React and Firebase to give users an intuitive place to track their health/fitness. 
+This web application utilizes React and Firebase to give users an intuitive place to track their health/fitness. 
 
 This web application is meant to allow users to track their personal health info. User's may create an account where they are able to personalize their info, and see how many calories they are eating within their allowance.
 
