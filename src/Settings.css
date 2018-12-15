@@ -1,0 +1,19 @@
+#save-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:#6c757d;
+    color: #fff;
+    border-color: #6c757d;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    margin-bottom: 0!important;
+}
+
+.text>div {
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+div.position-relative.form-check {
+    font-weight: lighter;
+}

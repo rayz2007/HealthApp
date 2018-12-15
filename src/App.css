@@ -1,32 +1,91 @@
-.App {
+header {
+  margin-bottom: 2%;
+  margin-top: 3%;
+  padding: 0;
+  padding-left: 3%;
+}
+
+footer p {
+  width: 100%;
+  margin: 0%;
+}
+
+footer {
+  margin-top: 2.5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 3%;
+  background: lightblue;
+  width: 100%;
+
   text-align: center;
+  bottom: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px) {
+  .navBar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    background: lightblue;   
+  } 
+  #navbar-brand {
+    font-size: xx-large;
+    font-weight: bold;
+    
   }
-  to {
-    transform: rotate(360deg);
+}
+
+  #link {
+  padding: 1.25rem;
   }
+
+  #sign-out {
+    background-color:#6c757d;
+    color: #fff;
+    border-color: #6c757d;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+
+
+  header, footer, .text {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .text {
+    padding-top: 3%;
+  }
+
+  #sign-out {
+    margin-left: 1rem;
+  }
+
+  footer, .text {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  header {
+    margin-bottom: 2%;
+    margin-top: 6%;
+    overflow: hidden;
+    padding-left: 1%;
+    width: 100%;
+    background: white;
+  }
+
+
+ul.mr-auto.navbar-nav.mr-auto {
+  margin-left: auto!important;
+  margin-right:0!important;
+  
 }

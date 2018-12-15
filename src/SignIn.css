@@ -1,0 +1,18 @@
+#signin-image {
+    background-image: url('img/rodion-kutsaev-66573-unsplash.jpg'); 
+    max-width: 100%;
+    height: 75vh;
+    max-height: 400px;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+}
+
+#signin-title {
+    font-size: 70px;
+    padding-top:100px;
+    color: rgb(52, 84, 126);
+    text-shadow: 3px 3px lightblue;
+}
+

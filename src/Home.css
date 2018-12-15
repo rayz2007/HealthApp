@@ -1,0 +1,22 @@
+#image {
+    background-image: url('img/curtis-macnewton-12711-unsplash.jpg'); 
+    max-width: 100%;
+    height: 75vh;
+    min-height: 250px;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+}
+
+
+p {
+    line-height: 200%;
+}
+
+h1 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
