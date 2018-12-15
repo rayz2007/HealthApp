@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/HealthApp/precache-manifest.69e682e8c49f0d29a437fcb98b77335f.js"
+  "/project-rayz2007/precache-manifest.c6a96d13a03a3bf02b758bd922044a96.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/HealthApp/index.html", {
+workbox.routing.registerNavigationRoute("/project-rayz2007/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
